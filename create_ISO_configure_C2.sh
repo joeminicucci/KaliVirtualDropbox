@@ -107,6 +107,7 @@ fi
 
 #If specified in the command line, get IP that the client will reach out to (a public IP most likely)
 C2IP=$1
+
 #If the IP was not sent via the command line, grab it from the aws metadata service
 if [ -z "$C2IP" ]; then
     C2IP=`curl ifconfig.me`
