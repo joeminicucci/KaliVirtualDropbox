@@ -107,16 +107,15 @@ fi
 
 #If specified in the command line, get IP that the client will reach out to (a public IP most likely)
 C2IP=$1
-
 #If the IP was not sent via the command line, grab it from the aws metadata service
 if [ -z "$C2IP" ]; then
-	C2IP=`curl ifconfig.me`
+    C2IP=`curl ifconfig.me`
 	echo $C2IP
 fi
 
 #If still no IP, give up
 if [ -z "$C2IP" ]; then
-	echo "Could not determine public IP. Exiting.." >&2
+    echo "Could not determine public IP. Exiting.." >&2
 	exit 1
 fi
 
